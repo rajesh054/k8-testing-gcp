@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django-propsamc-frontend
+  labels:
+     name: propsamc-django
+     app:  propsamc-frontend
+spec:
+  containers:
+    - name: uat-dataops-com
+      image: rajesh054/testing-frontend
+      ports:
+         - containerPort: 8000
