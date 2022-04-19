@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
    name: django-app-deploy
-   label:
+   labels:
       name: django-app-deploy
       app: django-frontend
 spec:
