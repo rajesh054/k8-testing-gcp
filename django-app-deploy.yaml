@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deplpoyment
+metadata:
+   name: django-app-deploy
+   label:
+      name: django-app-deploy
+      app: django-frontend
+spec:
+  replicas: 3
+  selector:
+     matchLabels:
+       name: propsamc-django
+       app:  propsamc-frontend
+  template:
+    metadata:
+      name: django-propsamc-frontend
+      labels:
+        name: propsamc-django
+        app:  propsamc-frontend
+    spec:
+      containers:
+        - name: uat-dataops-com
+          image: rajesh054/testing-frontend
+          ports:
+            - containerPort: 8000
