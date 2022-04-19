@@ -4,10 +4,11 @@ metadata:
   name: django-service
   labels:
      name: django-service
-     app: propsamc-frontend
 spec:
   type: LoadBalancer
   ports:
     - port: 80
       targetPort: 8000
-      nodePort: 30006
+  selector:
+      name: propsamc-django
+      app:  propsamc-frontend
